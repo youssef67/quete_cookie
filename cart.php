@@ -1,8 +1,10 @@
 <?php
 
-session_start();
-
 require 'inc/head.php';
+
+if (!$_SESSION) {
+    header('location: login.php');
+}
 
 ?>
 

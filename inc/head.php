@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (isset($_SESSION['name']))
+{
+    $name = $_SESSION['name'];
+}
+
+else{
+    $name = 'Wilder';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +51,7 @@
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
             <li>
-                <a href="login.php" class="btn btn-warning navbar-btn" style ="margin-right: 2%;">
+                <a href="logout.php" class="btn btn-warning navbar-btn" style ="margin-right: 2%;">
                     <span  aria-hidden="true"></span>
                     Deconnection
                 </a>
@@ -54,8 +68,6 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello <?php if (isset($_SESSION['name'])) {
-        echo $_SESSION['name']; } else { echo 'wilder';}
-        ?></strong>
+    <strong>Hello <?php echo $name ?></strong>
   </div>
 </header>

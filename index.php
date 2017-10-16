@@ -1,24 +1,6 @@
 <?php
 
-session_start();
-
-if(!isset($_SESSION['name']))
-
-{
-    header('Location: login.php');
-}
-
-/* $panier = array([@$_GET['add_to_cart'] => @$valeur]);
-print_r($panier) . '<br>';
-$panier[$_GET['add_to_cart']]++;
-print_r($panier). '<br>';
-$panier[$_GET['add_to_cart']]++;
-print_r($panier). '<br>';*/
-
-//if (@$_GET['add_to_cart' == 36]) {
-    //@$_GET['add_to_cart']++;
-//}
-
+require 'inc/head.php';
 
 
 $test = '';
@@ -40,7 +22,7 @@ setcookie('article', $test);
 
 
 
-require 'inc/head.php';
+
 
 ?>
 <section class="cookies container-fluid">

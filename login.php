@@ -1,14 +1,25 @@
 <?php
-session_start();
 
-if (isset($_POST['name']))
-{
-    $_SESSION['name'] = $_POST['name'];
-
-    header("Location: index.php");
-
-}
 require 'inc/head.php';
+
+$errorMessage = '';
+
+if ($_POST) {
+
+    if (isset($_POST['name']) && empty($_POST['name'])) {
+        $errorMessage = 'Please, do chose a name';
+    } else {
+        $_SESSION = $_POST;
+        header('Location: index.php');
+    }
+}
+
+if (isset($_SESSION['loginname'])) {
+    header('Location: index.php');
+}
+
+
+
 
 
 ?>
